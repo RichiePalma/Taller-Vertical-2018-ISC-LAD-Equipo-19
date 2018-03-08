@@ -25,7 +25,7 @@ public class Pregunta : MonoBehaviour {
 	}
 
 	public void puntuacionIzquierda(int a, panelScript panel){
-		Debug.Log ("Felicidad: " + panel.felicidad + " Contaminacion: "+ panel.contaminacion + " Sustentabilidad: " + panel.sustentabilidad + " Recursos: " + panel.recursos);
+		//Debug.Log ("Felicidad: " + panel.felicidad + " Contaminacion: "+ panel.contaminacion + " Sustentabilidad: " + panel.sustentabilidad + " Recursos: " + panel.recursos);
 		switch(a)
 		{
 		case 0:
@@ -201,7 +201,7 @@ public class Pregunta : MonoBehaviour {
 			panel.contaminacion += 4;
 			panel.recursos -= 5;
 			panel.felicidad += 8;
-			break;
+            break;
 		case 1:
 			
 			panel.recursos -= 6;

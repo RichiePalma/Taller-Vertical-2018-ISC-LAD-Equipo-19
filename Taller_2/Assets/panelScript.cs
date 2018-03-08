@@ -9,8 +9,9 @@ public class panelScript : MonoBehaviour {
 	public Text pregunta;
 	public Button respuesta1;
 	public Button respuesta2;
+//    private Spawn s;
 
-	public int felicidad = 50, sustentabilidad =50 , recursos = 50, contaminacion = 50;
+    public int felicidad = 50, sustentabilidad =50 , recursos = 50, contaminacion = 50;
 
 	string[] preguntas = { "Se quemo el bosque", "No hay energia suficiente", "Se fue la luz en un hospital",
 		"invertir en:", "Hay crisis financiera", "La principal productora de energia no cumple con los estandares internacionales: ",
@@ -60,9 +61,9 @@ public class panelScript : MonoBehaviour {
 	Pregunta p;
 	// Use this for initialization
 	void Start () {
-		//arr = new Pregunta[preguntas.Length];
-		//for(int i=0;i<preguntas.Length-1;i++)
-		//{
+        //arr = new Pregunta[preguntas.Length];
+        //for(int i=0;i<preguntas.Length-1;i++)
+        //{
 			p = new Pregunta (pregunta, respuesta1, respuesta2, preguntas[i], respuestas1[i], respuestas2[i]);
 			//arr [i] = p;
 		//}
@@ -83,7 +84,8 @@ public class panelScript : MonoBehaviour {
 		p.puntuacionIzquierda(i, this);
 		i++;
 		p = new Pregunta (pregunta, respuesta1, respuesta2, preguntas[i], respuestas1[i], respuestas2[i]);
-		rotarPosicionNormal ();
+        //StartCoroutine(s.genContamination(5));
+        rotarPosicionNormal ();
 	}
 
 	public void clickPreguntaDerecha(){
