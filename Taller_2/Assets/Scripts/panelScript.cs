@@ -9,6 +9,7 @@ public class panelScript : MonoBehaviour {
 	public Text pregunta;
 	public Button respuesta1;
 	public Button respuesta2;
+    public GameObject boteC;
 
 	public int felicidad = 50, sustentabilidad =50 , recursos = 50, contaminacion = 50;
 
@@ -80,7 +81,7 @@ public class panelScript : MonoBehaviour {
 //		respuesta2.GetComponentInChildren<Text> ().text = respuestas2[i];
 //		Pregunta pregunta = arr[i];
 //		pregunta.puntuacionIzquierda(i)
-		p.puntuacionIzquierda(i, this);
+		p.puntuacionIzquierda(i, this, boteC);
 		i++;
 		p = new Pregunta (pregunta, respuesta1, respuesta2, preguntas[i], respuestas1[i], respuestas2[i]);
 		rotarPosicionNormal ();

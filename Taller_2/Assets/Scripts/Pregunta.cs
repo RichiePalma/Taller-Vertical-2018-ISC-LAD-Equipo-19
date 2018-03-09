@@ -8,8 +8,14 @@ public class Pregunta : MonoBehaviour {
 	public Text pregunta { get; set; }
 	public Button respuesta1 { get; set; }
 	public Button respuesta2 { get; set; }
+   // public Spawn puntajes;
 
-	public Pregunta(){
+    void Start()
+    {
+       
+    }
+
+    public Pregunta(){
 	}
 
 	public Pregunta(Text question, Button answerL, Button answerR, string questionText, string answerLText, string answerRText){
@@ -24,14 +30,23 @@ public class Pregunta : MonoBehaviour {
 	
 	}
 
-	public void puntuacionIzquierda(int a, panelScript panel){
+    public Pregunta(Text question, string nombreEmbase){
+        pregunta = question;
+        pregunta.text = question.tag  + nombreEmbase;
+    }
+
+	public void puntuacionIzquierda(int a, panelScript panel, GameObject spawn){
 		Debug.Log ("Felicidad: " + panel.felicidad + " Contaminacion: "+ panel.contaminacion + " Sustentabilidad: " + panel.sustentabilidad + " Recursos: " + panel.recursos);
+        Spawn s = (Spawn) spawn.GetComponent(typeof(Spawn));
 		switch(a)
 		{
 		case 0:
 			Debug.Log ("Si entra");
 			panel.contaminacion -= 8;
+            //Spawn puntajes = new Spawn();
+            s.DecrementarContaminacion(8);
 			panel.recursos -= 2;
+            s.DecrementarRecursos(2);
 			panel.felicidad += 5;
 			break;
 		case 1:
@@ -200,7 +215,8 @@ public class Pregunta : MonoBehaviour {
 		case 0:
 			panel.contaminacion += 4;
 			panel.recursos -= 5;
-			panel.felicidad += 8;
+           // puntajes.DecrementarRecursos(5);
+            panel.felicidad += 8;
 			break;
 		case 1:
 			
